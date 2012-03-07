@@ -1,0 +1,31 @@
+<!-- Copyright (c) 2011, the Dart project authors.  Please see the AUTHORS file
+     for details. All rights reserved. Use of this source code is governed by a
+     BSD-style license that can be found in the LICENSE file. -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Frog Pond</title>
+    <link rel="stylesheet" type="text/css" href="pond.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="codemirror/lib/codemirror.css"/>
+    <script type="text/javascript" src="editors_module.js"></script>
+    <script type="text/javascript" src="pond.dart.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="dartEditor"></div>
+      <div id="htmlEditor"></div>
+      <div>
+        <input type="button" value="run" id="runButton">
+        <input type="button" value="clear output" id="clearButton">
+        <input type="button" value="test" id="testButton" style="display:none">
+        <input type="checkbox" id="warningCheckbox">
+        <label>treat warnings as errors</label>
+      </div>
+      <div id="jsEditor"></div>
+      <div id="result"><iframe id="resultFrame" ></iframe></div>
+      <div id="warningEditor"></div>
+    </div>
+  </body>
+</html>

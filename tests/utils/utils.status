@@ -1,0 +1,24 @@
+# Copyright (c) 2012, the Dart project authors.  Please see the AUTHORS file
+# for details. All rights reserved. Use of this source code is governed by a
+# BSD-style license that can be found in the LICENSE file.
+
+[ $component == leg ]
+DartdocTest: Fail
+JsonTest: Fail
+MarkdownTest: Fail
+UriTest: Fail
+
+[ $arch == simarm ]
+*: Skip
+
+[ $component == frog || $component == frogsh ]
+# Dartdoc only runs on the VM.
+DartdocTest: Skip
+MarkdownTest: Skip
+
+[ $component == vm || $component == dartc || $component == dartium ]
+# TODO(rnystrom): Right now, the VM tests can't access frog/ and client/ which
+# dartdoc uses, so disable for now. Once the deps files are unified this should
+# be fixed.
+DartdocTest: Skip
+MarkdownTest: Skip

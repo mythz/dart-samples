@@ -1,0 +1,19 @@
+# Copyright (c) 2011, the Dart project authors.  Please see the AUTHORS file
+# for details. All rights reserved. Use of this source code is governed by a
+# BSD-style license that can be found in the LICENSE file.
+
+prefix frog_native
+
+[ $component == frog || $component == frogsh ]
+NativePropertyFrogTest: Fail
+NativeMissingMethod1FrogTest: Fail # Issue 1912
+NativeWindow1FrogTest: Fail # Issue 1915
+NativeWindow2FrogTest: Fail # Issue 1915
+
+
+[ $checked ]
+NativeCheckedFieldsFrogTest: Fail
+
+
+[ $component == webdriver || $component == dartc || $component == chromium || $component == dartium || $component == frogium ]
+*: Skip

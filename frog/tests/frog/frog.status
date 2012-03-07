@@ -1,0 +1,30 @@
+# Copyright (c) 2011, the Dart project authors.  Please see the AUTHORS file
+# for details. All rights reserved. Use of this source code is governed by a
+# BSD-style license that can be found in the LICENSE file.
+
+prefix frog
+
+
+EvaluatorTest: Skip                    # TODO(jimhug): Skipped until ready to work on REPL.
+InheritanceOrderingTest: Skip          # TODO(jimhug): Fix flakiness uniformly
+PrototypePatchingTest: Skip            # TODO(jimhug): Fix flakiness uniformly
+
+
+[ $checked ]
+NativeCheckedFieldsFrogTest: Fail
+
+[ $component == frogsh && $checked]
+NodeProcessTest: Fail # Checked mode failure -- looked like it failed to find assert$WritableStream
+NativeCheckedFieldsFrogTest: Fail
+
+
+[ $component == vm || $component == dartc || $component == chromium || $component == dartium || $component == frogium || $component == frog || $component == leg]
+Node*Test: Skip
+
+
+[ $component == frog || $component == frogsh || $component == dartc || $component == chromium || $component == dartium || $component == frogium || $component == leg ]
+FrogServerTest: Skip
+
+
+[ $component == webdriver ]
+*: Skip

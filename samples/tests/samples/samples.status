@@ -1,0 +1,72 @@
+# Copyright (c) 2011, the Dart project authors.  Please see the AUTHORS file
+# for details. All rights reserved. Use of this source code is governed by a
+# BSD-style license that can be found in the LICENSE file.
+
+prefix samples
+
+[ $component == dartc ]
+chat/*: Skip
+
+[ $arch == x64 ]
+*: Skip
+
+[ $arch == simarm ]
+*: Skip
+
+[ $arch == arm ]
+*: Skip
+
+
+[ $component == chromium || $component == dartium || $component == frogium ]
+chat/ChatServerTest: Skip
+chat/HttpTest: Skip
+chat/HttpParserTest: Skip
+chat/UrlEncodingTest: Skip
+lib/layout/LayoutTest: Skip # Issue 152
+lib/touch/TouchTest: Skip # Issue 157
+ChatServerTest: Skip
+HttpTest: Skip
+HttpParserTest: Skip
+UrlEncodingTest: Skip
+#proxy/*_generatedTest: Skip
+
+[ $component == chromium ]
+dartcombat/DartCombatTest: Skip # Issue 1218
+DartCombatTest: Skip
+
+[ $component == dartium ]
+dartcombat/DartCombatTest: Skip # Bug 5279716
+DartCombatTest: Skip
+proxy/MintMakerFullyIsolated_generatedTest: Skip
+
+[ $component == dartium && $mode == debug ]
+swarm/SwarmTest: Skip # Issue 1617
+SwarmTest: Skip
+
+[ $component == frogium || ($component == webdriver && ($browser == chrome || $browser == ff || $browser == safari)) ]
+dartcombat/DartCombatTest: Skip # passes locally but timeout on bot?
+DartCombatTest: Skip
+
+[ $component == webdriver && $browser == safari ]
+PromiseBasedTest: Skip
+
+[ $component == vm]
+dartcombat/DartCombatTest: Skip
+DartCombatTest: Skip
+SwarmTest: Skip
+swarm/SwarmTest: Skip
+lib/layout/LayoutTest: Skip
+lib/touch/TouchTest: Skip
+lib/observable/ObservableTest: Skip
+lib/util/UtilTest: Skip
+lib/view/ViewTest: Skip
+
+[ $component == frog ]
+*: Skip
+
+[ $component == frogsh ]
+*: Skip
+
+[ $component == leg ]
+*: Skip
+
